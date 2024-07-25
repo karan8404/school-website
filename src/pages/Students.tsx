@@ -75,7 +75,7 @@ export const Students = () => {
       <section className="mt-4">
         <h2 className="text-2xl font-bold mb-5 text-blue-900 text-center">Clubs and Societies</h2>
         <div className="w-full">
-          <div className="flex flex-wrap transition-transform duration-500 ease-in-out justify-center" >
+          <div className="flex flex-wrap gap-5 transition-transform duration-500 ease-in-out justify-center" >
             {clubs.map((club) => (
               <div key={club} className="card w-64 bg-base-100 shadow-xl mx-2">
                 <figure><img src={`/Clubs/${club}.jpg`} alt={club} className="h-48 object-cover" loading="lazy"/></figure>
@@ -91,7 +91,7 @@ export const Students = () => {
       <section className="mt-4">
         <h2 className="text-2xl font-bold mb-5 text-blue-900 text-center">Achievements</h2>
         <div className="overflow-hidden w-full">
-          <div className="flex flex-wrap transition-transform duration-500 ease-in-out justify-center" >
+          <div className="flex flex-wrap gap-5 transition-transform duration-500 ease-in-out justify-center" >
             {achievements.map((object) => (
               <div key={object.name} className="card w-64 bg-base-100 shadow-xl mx-2">
                 <figure><img src={`/achievements/${object.name}.jpg`} alt={object.name} className="h-48 object-cover" loading="lazy"/></figure>

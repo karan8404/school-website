@@ -1,12 +1,12 @@
 
 export const Home = () => {
   return (
-    <div className="m-10">
-      <h1 className="text-3xl font-bold text-blue-900">Welcome to Springdale Public School, where we nurture young minds for a brighter future.</h1>
+    <div className="m-3 sm:m-10">
+      <h1 className="text-xl sm:text-3xl font-bold text-blue-900 text-center">Welcome to Springdale Public School, where we nurture young minds for a brighter future.</h1>
 
-      <div className="carousel gap-6 mt-10 py-3">
+      <div className="flex flex-col md:flex-row items-center gap-6 mt-10 py-3">
 
-        <div className="card bg-green-800 w-96 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition duration-300">
+        <div className="card bg-green-800 w-72 md:w-96 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition duration-300">
           <div className="card-body">
             <h2 className="card-title">Annual Sports Day</h2>
             <p> Celebrating Excellence in Sports</p>
@@ -16,7 +16,7 @@ export const Home = () => {
           </figure>
         </div>
 
-        <div className="card bg-yellow-800 w-96 shadow-xl  hover:shadow-2xl transform hover:-translate-y-3 transition duration-300">
+        <div className="card bg-yellow-800 w-72 md:w-96 shadow-xl  hover:shadow-2xl transform hover:-translate-y-3 transition duration-300">
           <div className="card-body">
             <h2 className="card-title">Cultural Fest</h2>
             <p>Embracing Diversity and Creativity</p>
@@ -26,7 +26,7 @@ export const Home = () => {
           </figure>
         </div>
 
-        <div className="card bg-red-800 w-96 shadow-xl  hover:shadow-2xl transform hover:-translate-y-3 transition duration-300">
+        <div className="card bg-red-800 w-72 md:w-96 shadow-xl  hover:shadow-2xl transform hover:-translate-y-3 transition duration-300">
           <div className="card-body">
             <h2 className="card-title">Science Exhibition</h2>
             <p>Showcasing Student Innovations</p>

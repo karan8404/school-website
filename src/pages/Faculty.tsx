@@ -12,9 +12,9 @@ export const Faculty = () => {
 
   return (
     <div className="p-4">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="flex flex-row flex-wrap gap-5 items-center justify-center">
         {facultyMembers.map((member, index) => (
-          <div key={index} className="card w-96 bg-base-100 shadow-xl flex flex-col">
+          <div key={index} className="card w-80 bg-base-100 shadow-xl flex flex-col h-96">
             <figure className="h-48 w-full">
               <img src={member.image} alt="Faculty" className="h-full w-full object-cover object-top" />
             </figure>

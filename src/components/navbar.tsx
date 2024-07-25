@@ -11,17 +11,19 @@ export const Navbar = () => {
   return (
     <div className="navbar bg-blue-900">
       <div className="flex-1">
-        <div className="flex items-center" onClick={() => { navigate('/') }}>
-          <img src="/logo.png" className="h-10 w-10 cursor-pointer" />
-          <a className="btn btn-ghost text-xl text-white">Springdale Public School</a>
+        <div className="flex items-center ml-5" onClick={() => { navigate('/') }}>
+          <img src="/logo.png" className="h-10 w-10 cursor-pointer min-w-10" />
+          <a className="btn btn-ghost text-xl text-white hidden md:inline p-2">Springdale Public School</a>
         </div>
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1 mr-8">
-          <li><a className="text-white" onClick={() => { navigate('/about') }}>About Us</a></li>
-          <li><a className="text-white" onClick={() => { navigate('/academics') }}>Academics</a></li>
-          <li><a className="text-white" onClick={() => { navigate('/admissions') }}>Admissions</a></li>
-          <li className="relative">
+          <div className="flex flex-col sm:flex-row items-center">
+            <li><a className="text-white" onClick={() => { navigate('/about') }}>About Us</a></li>
+            <li><a className="text-white" onClick={() => { navigate('/academics') }}>Academics</a></li>
+            <li><a className="text-white" onClick={() => { navigate('/admissions') }}>Admissions</a></li>
+          </div>
+          <li className="relative flex justify-center">
             <div>
               <button
                 className="dropdown-toggle px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center whitespace-nowrap"

@@ -76,8 +76,8 @@ export const Contact = () => {
       </div>
 
       <div className="mb-4">
-        <h2 className="text-xl md:text-3xl md:text-center md:mb-5 font-semibold text-blue-900">Location</h2>
-        <div className="w-80 h-60 md:w-[800px] md:h-[600px] mx-auto">
+        <h2 className="text-xl md:text-3xl sm:text-center md:mb-5 font-semibold text-blue-900">Location</h2>
+        <div className="w-4/5 aspect-w-4 aspect-h-2 lg:aspect-h-1 mx-auto">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509374!2d-122.4194154846818!3d37.7749292797596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sSpringdale%20Public%20School!5e0!3m2!1sen!2sus!4v1616161616161!5m2!1sen!2sus"
             style={{ border: 0 }}

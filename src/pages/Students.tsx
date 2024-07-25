@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState,useEffect} from "react"
 
 export const Students = () => {
   const activities = ["Music", "Dance", "Drama", "Art", "Sports", "Robotics", "Debate Club", "Science Club"];
@@ -6,6 +6,32 @@ export const Students = () => {
   const achievements = [{ name: "John Smith", achievement: "National Level Math Olympiad Winner" }, { name: "Sarah Lee", achievement: "Gold Medalist in State Swimming Championship" }, { name: "Tech Innovators Club", achievement: "Winners of Inter-School Robotics Competition" }];
 
   const [index, setIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(4);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setVisibleCount(1);
+      } else if (window.innerWidth < 768) {
+        setVisibleCount(2);
+      } else if (window.innerWidth < 1024) {
+        setVisibleCount(3);
+      } else {
+        setVisibleCount(4);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log(visibleCount,window.innerWidth)
+  },[visibleCount])
 
   const handlePrev = () => {
     setIndex((prevIndex) => (prevIndex - 1 + activities.length) % activities.length);
@@ -15,8 +41,8 @@ export const Students = () => {
     setIndex((prevIndex) => (prevIndex + 1) % activities.length);
   };
 
-  const visibleActivities = activities.slice(index, index + 4).concat(
-    activities.slice(0, Math.max(0, index + 4 - activities.length))
+  const visibleActivities = activities.slice(index, index + visibleCount).concat(
+    activities.slice(0, Math.max(0, index + visibleCount - activities.length))
   );
 
   return (
@@ -49,8 +75,8 @@ export const Students = () => {
 
       <section className="mt-4">
         <h2 className="text-2xl font-bold mb-5 text-blue-900 text-center">Clubs and Societies</h2>
-        <div className="overflow-hidden w-full">
-          <div className="flex transition-transform duration-500 ease-in-out justify-center" >
+        <div className="w-full">
+          <div className="flex flex-wrap transition-transform duration-500 ease-in-out justify-center" >
             {clubs.map((club) => (
               <div key={club} className="card w-64 bg-base-100 shadow-xl mx-2">
                 <figure><img src={`/Clubs/${club}.jpg`} alt={club} className="h-48 object-cover" /></figure>
@@ -66,7 +92,7 @@ export const Students = () => {
       <section className="mt-4">
         <h2 className="text-2xl font-bold mb-5 text-blue-900 text-center">Achievements</h2>
         <div className="overflow-hidden w-full">
-          <div className="flex transition-transform duration-500 ease-in-out justify-center" >
+          <div className="flex flex-wrap transition-transform duration-500 ease-in-out justify-center" >
             {achievements.map((object) => (
               <div key={object.name} className="card w-64 bg-base-100 shadow-xl mx-2">
                 <figure><img src={`/achievements/${object.name}.jpg`} alt={object.name} className="h-48 object-cover" /></figure>
@@ -82,9 +108,9 @@ export const Students = () => {
 
       <section className="mt-4">
         <h2 className="text-2xl font-bold mb-5 text-blue-900 text-center">Student Council</h2>
-        <div className="m-10 flex">
-          <img src="/Student Council.jpg" alt="" className="h-96 mr-10" />
-          <div className="space-y-4">
+        <div className="m-10 flex flex-col lg:flex-row">
+          <img src="/Student Council.jpg" alt="" className="lg:h-96 mr-10" />
+          <div className="space-y-4 lg:mt-10">
             <p className="text-emerald-600 text-xl">President: Amy Parker, Grade 12</p>
             <p className="text-emerald-600 text-xl">Vice President: Rajiv Mehta, Grade 11</p>
             <p className="text-emerald-600 text-xl">Secretary: Lisa Wong, Grade 10</p>

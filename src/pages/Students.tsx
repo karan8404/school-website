@@ -10,14 +10,12 @@ export const Students = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 640) {
+      if (window.innerWidth < 680) {
         setVisibleCount(1);
-      } else if (window.innerWidth < 768) {
+      } else if (window.innerWidth < 1000) {
         setVisibleCount(2);
-      } else if (window.innerWidth < 1024) {
-        setVisibleCount(3);
       } else {
-        setVisibleCount(4);
+        setVisibleCount(3);
       }
     };
 
@@ -35,6 +33,7 @@ export const Students = () => {
 
   const handlePrev = () => {
     setIndex((prevIndex) => (prevIndex - 1 + activities.length) % activities.length);
+    console.log(window.innerWidth)
   };
 
   const handleNext = () => {
@@ -52,14 +51,14 @@ export const Students = () => {
       <section className="mt-4">
         <h2 className="text-2xl font-bold mb-5 text-blue-900 text-center">Extracurricular Activities</h2>
         <div className="relative">
-          <button onClick={handlePrev} className="absolute left-32 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full">
+          <button onClick={handlePrev} className="absolute left-1 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full">
             &lt;
           </button>
           <div className="overflow-hidden w-full">
             <div className="flex transition-transform duration-500 ease-in-out justify-center" >
               {visibleActivities.map((activity) => (
-                <div key={activity} className="card w-64 bg-base-100 shadow-xl mx-2">
-                  <figure><img src={`/extracurricular/${activity}.jpg`} alt={activity} className="h-48 object-cover" /></figure>
+                <div key={activity} className="card w-64 bg-base-100 shadow-xl mx-8">
+                  <figure><img src={`/extracurricular/${activity}.jpg`} alt={activity} className="h-48 object-cover" loading="lazy"/></figure>
                   <div className="card-body">
                     <h3 className="card-title">{activity}</h3>
                   </div>
@@ -67,7 +66,7 @@ export const Students = () => {
               ))}
             </div>
           </div>
-          <button onClick={handleNext} className="absolute right-32 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full">
+          <button onClick={handleNext} className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full">
             &gt;
           </button>
         </div>
@@ -79,7 +78,7 @@ export const Students = () => {
           <div className="flex flex-wrap transition-transform duration-500 ease-in-out justify-center" >
             {clubs.map((club) => (
               <div key={club} className="card w-64 bg-base-100 shadow-xl mx-2">
-                <figure><img src={`/Clubs/${club}.jpg`} alt={club} className="h-48 object-cover" /></figure>
+                <figure><img src={`/Clubs/${club}.jpg`} alt={club} className="h-48 object-cover" loading="lazy"/></figure>
                 <div className="card-body">
                   <h3 className="card-title">{club}</h3>
                 </div>
@@ -95,7 +94,7 @@ export const Students = () => {
           <div className="flex flex-wrap transition-transform duration-500 ease-in-out justify-center" >
             {achievements.map((object) => (
               <div key={object.name} className="card w-64 bg-base-100 shadow-xl mx-2">
-                <figure><img src={`/achievements/${object.name}.jpg`} alt={object.name} className="h-48 object-cover" /></figure>
+                <figure><img src={`/achievements/${object.name}.jpg`} alt={object.name} className="h-48 object-cover" loading="lazy"/></figure>
                 <div className="card-body">
                   <h3 className="card-title">{object.name}</h3>
                   <p>{object.achievement}</p>

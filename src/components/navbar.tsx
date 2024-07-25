@@ -17,7 +17,7 @@ export const Navbar = () => {
         </div>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1 mr-8">
+        <ul className="menu menu-horizontal px-1">
           <div className="flex flex-col sm:flex-row items-center">
             <li><a className="text-white" onClick={() => { navigate('/about') }}>About Us</a></li>
             <li><a className="text-white" onClick={() => { navigate('/academics') }}>Academics</a></li>
@@ -29,7 +29,7 @@ export const Navbar = () => {
                 className="dropdown-toggle px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center whitespace-nowrap"
                 onClick={() => setIsOpen(!isOpen)}>
                 More
-                <span className={`inline-block ml-2 transform transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>&#9660;</span>
+                <span className={`inline-block ml-3 transform transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>&#9660;</span>
               </button>
               <ul
                 className={`absolute bg-base-100 rounded-md p-2 w-32 ${dropdownStyles} transition-all duration-500 ease-in-out overflow-hidden z-20`}
